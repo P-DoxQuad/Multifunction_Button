@@ -1,0 +1,4 @@
+# ignore all files in any directory named Debug,  __vm, .vs
+Debug/
+__vm/
+.vs/
