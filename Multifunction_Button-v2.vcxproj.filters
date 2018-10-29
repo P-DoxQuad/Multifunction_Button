@@ -15,19 +15,11 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="button.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="__vm\.Multifunction_Button-v11.vsarduino.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
+    <None Include="Multifunction_Button-v2.ino" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="button.c">
+    <ClInclude Include="__vm\.Multifunction_Button-v2.vsarduino.h">
       <Filter>Header Files</Filter>
-    </ClCompile>
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Multifunction_Button-v11.ino" />
+    </ClInclude>
   </ItemGroup>
 </Project>
