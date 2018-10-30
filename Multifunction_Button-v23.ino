@@ -1,12 +1,14 @@
 /*
-Name:     Multifunction_Button-v22.ino
+Name:     Multifunction_Button-v23.ino
 Created:  04/12/2017 2:00:00 PM
 Author:   Michael Dzura
-Version: 2.2
+Version: 2.3
 
 Tests a 3 way button function through switch input to activate 1-3 LEDs/Relays.
 Short Press (20ms-1000ms), Long Press(1000ms-2000ms), Longest Press(2000ms-4000ms).
 
+**CHANGES:
+- Removed Debounce Code.
 */
 
 /*********** INPUTS ***********/
@@ -29,11 +31,6 @@ int switchState;			   // Value Of The Switch State.
 long pressedTime;			   // Timestamp For When The Switch Is Pressed.
 long releasedTime;			   // Timestamp For When The Switch Is Released.
 long pressDuration;			   // Total Duration The Switch Was Pressed.
-/******************************/
-
-/********** DEBOUNCE **********/
-#define DEBOUNCEDELAY	 20	   // Debounce Filter Time
-long lastDebounceTime;		   // Previous Debounce Timestamp
 /******************************/
 
 
@@ -62,8 +59,6 @@ void loop() {
 	// the rising and falling edge.
 	if (switchState != lastSwitchState) {
 		
-		lastDebounceTime = millis();					// Reset The Debouncing Timer.
-
 		// Check If The Switch Is Being Pressed.
 		if (switchState == LOW) {
 			Serial.print("SwitchState = LOW, ");
@@ -84,37 +79,32 @@ void loop() {
 		}
 	}
 
-
-	// Whatever the reading is at, it's been there for longer
-	// than the debounce delay, so take it as the actual current state:
-	if ((millis() - lastDebounceTime) > DEBOUNCEDELAY) {
 		
-		int state = button(INPUT_SWITCH, CLICK_TIME);			// Calls the button function and returns value of 1-3
+	int state = button(INPUT_SWITCH, CLICK_TIME);			// Calls the button function and returns value of 1-3
 
-		// Activated On Short Click.
-		if (state == 1) {
-			digitalWrite(LED[0], HIGH);
-			//digitalWrite(RELAY[0], HIGH);
-			delay(500);
-			//digitalWrite(RELAY[0], LOW);
-			digitalWrite(LED[0], LOW);
+	// Activated On Short Click.
+	if (state == 1) {
+		digitalWrite(LED[0], HIGH);
+		//digitalWrite(RELAY[0], HIGH);
+		delay(500);
+		//digitalWrite(RELAY[0], LOW);
+		digitalWrite(LED[0], LOW);
 
-		// Activated On Long Click.
-		} else if (state == 2) {
-			digitalWrite(LED[1], HIGH);
-			//digitalWrite(RELAY[1], HIGH);
-			delay(1000);
-			//digitalWrite(RELAY[1], LOW);
-			digitalWrite(LED[1], LOW);
+	// Activated On Long Click.
+	} else if (state == 2) {
+		digitalWrite(LED[1], HIGH);
+		//digitalWrite(RELAY[1], HIGH);
+		delay(1000);
+		//digitalWrite(RELAY[1], LOW);
+		digitalWrite(LED[1], LOW);
 
-		// Activated On Longest Click.
-		} else if (state == 3) {
-			digitalWrite(LED[2], HIGH);
-			//digitalWrite(RELAY[2], HIGH);
-			delay(1000);
-			//digitalWrite(RELAY[2], LOW);
-			digitalWrite(LED[2], LOW);
-		} 
+	// Activated On Longest Click.
+	} else if (state == 3) {
+		digitalWrite(LED[2], HIGH);
+		//digitalWrite(RELAY[2], HIGH);
+		delay(1000);
+		//digitalWrite(RELAY[2], LOW);
+		digitalWrite(LED[2], LOW);
 	}
 
 	// Save the switch value. Next time through the loop,
@@ -158,8 +148,7 @@ int button(int input_pin, long short_Click) {
 /**************************** Short Click Perameters****************************
  * Greater Than Debounce Filter, And Less Than Short Click Time.			   *
  *******************************************************************************/
-		if ((pressDuration > DEBOUNCEDELAY) && (pressDuration <= short_Click) && pressTrigger == 0) {
-			lastDebounceTime = millis(); // Reset Debounce Timer.
+		if ((pressDuration <= short_Click) && pressTrigger == 0) {
 			Serial.println("Short Press!");
 			pressTrigger = 0;			 // Reset the press trigger back to zero.
 										 // Prevents Release From Activating.
@@ -170,7 +159,6 @@ int button(int input_pin, long short_Click) {
  * Greater Than Short Click Time, And Less Than Long Click Time.			   *
  *******************************************************************************/
 		if ((pressDuration >= short_Click) && (pressDuration <= long_Click) && pressTrigger == 0) {
-			lastDebounceTime = millis(); // Reset Debounce Timer.
 			Serial.println("Long Press!");
 			pressTrigger = 0;			 // Reset the press trigger back to zero.
 										 // Prevents Release From Activating.
@@ -182,7 +170,6 @@ int button(int input_pin, long short_Click) {
  * Timeout Is Included For Anything Else Greater.							   *
  *******************************************************************************/
 		if ((pressDuration >= long_Click) && (pressDuration < longest_Click) && (pressDuration < timeout) && pressTrigger == 0) {
-			lastDebounceTime = millis(); // Reset Debounce Timer.
 			Serial.println("Longest Press!");
 			pressTrigger = 0;			 // Reset the press trigger back to zero.
 										 // Prevents Release From Activating.
