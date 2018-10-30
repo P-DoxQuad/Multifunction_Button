@@ -1,4 +1,4 @@
-# Multifunction_Button-master
+# Multifunction_Button
 
 "The simplest solutions can solve the most complex questions - that is exactly the purpose of this project!"
 
