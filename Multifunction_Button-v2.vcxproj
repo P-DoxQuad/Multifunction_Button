@@ -13,7 +13,7 @@
   <PropertyGroup Label="Globals">
     <ProjectGuid>{C5F80730-F44F-4478-BDAE-6634EFC2CA88}</ProjectGuid>
     <RootNamespace>$safeprojectname$</RootNamespace>
-    <ProjectName>Multifunction_Button-v22-Debounce</ProjectName>
+    <ProjectName>Multifunction_Button-v2</ProjectName>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
@@ -47,8 +47,8 @@
       <WarningLevel>Level3</WarningLevel>
       <Optimization>Disabled</Optimization>
       <SDLCheck>true</SDLCheck>
-      <AdditionalIncludeDirectories>d:\Program Files (x86)\Arduino\libraries;d:\Program Files (x86)\Arduino\hardware\arduino\avr\libraries;C:\Users\Michael\AppData\Local\arduino15\packages\adafruit\hardware\avr\1.4.9\libraries;D:\Dropbox\Projects\Arduino\libraries;d:\Program Files (x86)\Arduino\hardware\arduino\avr\cores\arduino;C:\Users\Michael\AppData\Local\arduino15\packages\adafruit\hardware\avr\1.4.9\variants\feather32u4;D:\Dropbox\Projects\Novalte\Projects\R&amp;D\Code Assets\Multifunction_Button-v22-Debounce;C:\Users\Michael\AppData\Local\arduino15\packages\arduino\tools\avr-gcc\4.9.2-atmel3.5.4-arduino2/avr/include/;C:\Users\Michael\AppData\Local\arduino15\packages\arduino\tools\avr-gcc\4.9.2-atmel3.5.4-arduino2//avr/include/avr/;C:\Users\Michael\AppData\Local\arduino15\packages\arduino\tools\avr-gcc\4.9.2-atmel3.5.4-arduino2/lib\gcc\avr\4.8.1\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
-      <ForcedIncludeFiles>D:\Dropbox\Projects\Arduino\Multifunction_Button-v22-Debounce\__vm\.Multifunction_Button-v22-Debounce.vsarduino.h;%(ForcedIncludeFiles)</ForcedIncludeFiles>
+      <AdditionalIncludeDirectories>d:\Program Files (x86)\Arduino\libraries;d:\Program Files (x86)\Arduino\hardware\arduino\avr\libraries;C:\Users\Michael\AppData\Local\arduino15\packages\adafruit\hardware\avr\1.4.9\libraries;D:\Dropbox\Projects\Arduino\libraries;d:\Program Files (x86)\Arduino\hardware\arduino\avr\cores\arduino;C:\Users\Michael\AppData\Local\arduino15\packages\adafruit\hardware\avr\1.4.9\variants\feather32u4;D:\Dropbox\Projects\Arduino\Multifunction_Button-v2;d:\Program Files (x86)\Arduino\hardware\arduino\avr\cores\arduino;C:\Users\Michael\AppData\Local\arduino15\packages\adafruit\hardware\avr\1.4.9\variants\feather32u4;d:\Program Files (x86)\Arduino\libraries;d:\Program Files (x86)\Arduino\hardware\arduino\avr\libraries;C:\Users\Michael\AppData\Local\arduino15\packages\adafruit\hardware\avr\1.4.9\libraries;C:\Program Files (x86)\Microsoft Visual Studio 11.0\Common7\IDE\Extensions\is1nshbd.qnv\Micro Platforms\default\debuggers;D:\Dropbox\Projects\Arduino\libraries;C:\Users\Michael\AppData\Local\arduino15\packages\arduino\tools\avr-gcc\4.9.2-atmel3.5.4-arduino2/avr/include/;C:\Users\Michael\AppData\Local\arduino15\packages\arduino\tools\avr-gcc\4.9.2-atmel3.5.4-arduino2//avr/include/avr/;C:\Users\Michael\AppData\Local\arduino15\packages\arduino\tools\avr-gcc\4.9.2-atmel3.5.4-arduino2/lib\gcc\avr\4.8.1\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <ForcedIncludeFiles>D:\Dropbox\Projects\Arduino\Multifunction_Button-v2\__vm\.Multifunction_Button-v2.vsarduino.h;%(ForcedIncludeFiles)</ForcedIncludeFiles>
       <IgnoreStandardIncludePath>false</IgnoreStandardIncludePath>
       <PreprocessorDefinitions>__AVR_ATmega32u4__;__AVR_ATmega32U4__;F_CPU=8000000L;ARDUINO=106010;ARDUINO_AVR_FEATHER32U4;ARDUINO_ARCH_AVR;USB_VID=0x239A;USB_PID=0x800C;__cplusplus=201103L;%(PreprocessorDefinitions)</PreprocessorDefinitions>
     </ClCompile>
@@ -74,12 +74,12 @@
     <ProjectCapability Include="VisualMicro" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Multifunction_Button-v22-Debounce.ino">
+    <None Include="Multifunction_Button-v2.ino">
       <FileType>CppCode</FileType>
     </None>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="__vm\.Multifunction_Button-v22-Debounce.vsarduino.h" />
+    <ClInclude Include="__vm\.Multifunction_Button-v2.vsarduino.h" />
   </ItemGroup>
   <PropertyGroup>
     <DebuggerFlavor>VisualMicroDebugger</DebuggerFlavor>

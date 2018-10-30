@@ -15,10 +15,10 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <None Include="Multifunction_Button-v22-Debounce.ino" />
+    <None Include="Multifunction_Button-v2.ino" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="__vm\.Multifunction_Button-v22-Debounce.vsarduino.h">
+    <ClInclude Include="__vm\.Multifunction_Button-v2.vsarduino.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
