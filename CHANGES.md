@@ -2,6 +2,7 @@
 
 V2.4:
 - Formatted and added comments.
+- Used C-style wait function (replaced 'DELAY'), not Arduino reliant.
 - Debounce And Edge Detection Are All Included Inside Button Function. 
 - Seperated Button function from main code. Implemented in 'button.c' and 'button.h'
 
