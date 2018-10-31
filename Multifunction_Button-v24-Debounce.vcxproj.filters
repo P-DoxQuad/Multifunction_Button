@@ -15,11 +15,25 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <None Include="Multifunction_Button-v23.ino" />
+    <None Include="Multifunction_Button-v24-Debounce.ino" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="__vm\.Multifunction_Button-v23.vsarduino.h">
+    <ClInclude Include="__vm\.Multifunction_Button-v24-Debounce.vsarduino.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="button.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="TimeWait.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="button.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="TimeWait.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
